@@ -43,10 +43,7 @@ const Dashboard = () => {
           {/* <p className="text-gray-600">Here's your sales performance overview</p> */}
         </div>
         <div className="flex space-x-3">
-          <Button variant="outline" size="sm" onClick={handlePlanRoute}>
-            <Calendar size={16} className="mr-2" />
-            Plan Route
-          </Button>
+        
           <Link to="/leads">
             <Button size="sm">
               <Phone size={16} className="mr-2" />

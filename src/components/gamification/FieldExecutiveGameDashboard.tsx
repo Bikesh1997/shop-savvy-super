@@ -213,7 +213,7 @@ const FieldExecutiveGameDashboard = () => {
       <Card
   className="text-[#1e3a2f] w-full"
   style={{
-    background: 'linear-gradient(to right, #c9f1e4, #ffe2c4, #fff2c2)',
+    background: 'linear-gradient(to right,rgba(51, 78, 158, 0.36),rgba(51, 78, 158, 0.82',
   }}
 >
   <CardContent className="p-4 sm:p-6">
@@ -239,7 +239,7 @@ const FieldExecutiveGameDashboard = () => {
       </div>
       <Progress
         value={progressPercentage}
-        className="h-2 sm:h-3 bg-[#d2f1e7] [&>div]:bg-[#23a07c]"
+        className="h-2 sm:h-3 bg-[#d2f1e7] [&>div]:bg-primary"
       />
     </div>
   </CardContent>
