@@ -137,7 +137,7 @@ const SmartNudges = () => {
   };
 
   const getNudgeIcon = (type: string) => {
-    const icons: Record<string, JSX.Element> = {
+    const icons: Record<string, React.ReactElement> = {
       opportunity: <Trophy className="h-5 w-5 text-yellow-500" />,
       kra: <Target className="h-5 w-5 text-orange-500" />,
       route: <MapPin className="h-5 w-5 text-green-500" />,
