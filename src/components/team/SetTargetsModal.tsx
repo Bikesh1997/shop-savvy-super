@@ -88,7 +88,7 @@ const SetTargetsModal = ({ isOpen, onClose, preSelectedMember }: SetTargetsModal
                   <SelectItem key={member.id} value={member.id}>
                     <div className="flex items-center space-x-2">
                       <Avatar className="h-6 w-6">
-                        <AvatarFallback className="bg-teal-100 text-teal-700 text-xs">
+                        <AvatarFallback className="bg-primary/10 text-primary text-xs">
                           {member.name.split(' ').map(n => n[0]).join('')}
                         </AvatarFallback>
                       </Avatar>

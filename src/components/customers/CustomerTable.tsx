@@ -150,7 +150,7 @@ const CustomerTable = ({ customers, selectedCustomer, onCustomerSelect }: Custom
                         <TableCell>
                           <div className="flex items-center gap-3">
                             <Avatar className="h-8 w-8">
-                              <AvatarFallback className="bg-teal-100 text-teal-700 text-sm">
+                              <AvatarFallback className="bg-primary/10 text-primary text-sm">
                                 {customer.name.split(' ').map((n) => n[0]).join('')}
                               </AvatarFallback>
                             </Avatar>
@@ -230,7 +230,7 @@ const CustomerTable = ({ customers, selectedCustomer, onCustomerSelect }: Custom
                   >
                     <CardHeader className="flex flex-row items-center gap-4 pb-3">
                       <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-teal-100 text-teal-700">
+                        <AvatarFallback className="bg-primary/10 text-primary">
                           {customer.name.split(' ').map((n) => n[0]).join('')}
                         </AvatarFallback>
                       </Avatar>

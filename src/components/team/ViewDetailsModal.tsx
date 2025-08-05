@@ -58,7 +58,7 @@ const ViewDetailsModal = ({ isOpen, onClose, member }: ViewDetailsModalProps) =>
           {/* Header Info */}
           <div className="flex items-center space-x-4">
             <Avatar className="h-16 w-16">
-              <AvatarFallback className="bg-teal-100 text-teal-700 text-lg">
+              <AvatarFallback className="bg-primary/10 text-primary text-lg">
                 {member.name.split(' ').map(n => n[0]).join('')}
               </AvatarFallback>
             </Avatar>

@@ -306,7 +306,7 @@ const TeamManagement = () => {
                   <div key={member.id} className="flex items-center justify-between p-4 border rounded-lg">
                     <div className="flex items-center space-x-4">
                       <Avatar className="h-12 w-12">
-                        <AvatarFallback className="bg-teal-100 text-teal-700">
+                         <AvatarFallback className="bg-primary/10 text-primary">
                           {member.name.split(' ').map(n => n[0]).join('')}
                         </AvatarFallback>
                       </Avatar>
@@ -389,7 +389,7 @@ const TeamManagement = () => {
                     <div className="flex justify-between items-center mb-3">
                       <div className="flex items-center space-x-3">
                         <Avatar className="h-10 w-10">
-                          <AvatarFallback className="bg-teal-100 text-teal-700">
+                          <AvatarFallback className="bg-primary/10 text-primary">
                             {member.name.split(' ').map(n => n[0]).join('')}
                           </AvatarFallback>
                         </Avatar>

@@ -214,7 +214,7 @@ const CustomerDetailsModal = ({ customer, isOpen, onOpenChange }: CustomerDetail
                 <CardContent className="p-4 sm:p-6">
                   <div className="text-center">
                     <Avatar className="h-16 w-16 sm:h-20 sm:w-20 mx-auto mb-4">
-                      <AvatarFallback className="text-lg sm:text-xl bg-teal-100 text-teal-700">
+                      <AvatarFallback className="text-lg sm:text-xl bg-primary/10 text-primary">
                         {customer.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>

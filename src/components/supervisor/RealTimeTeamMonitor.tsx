@@ -212,7 +212,7 @@ const RealTimeTeamMonitor = () => {
                 <div className="flex items-start justify-between">
                   <div className="flex items-start space-x-3">
                     <Avatar className="h-12 w-12">
-                      <AvatarFallback className="bg-teal-100 text-teal-700">
+                      <AvatarFallback className="bg-primary/10 text-primary">
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>

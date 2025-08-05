@@ -371,7 +371,7 @@ const LeadAllocation = () => {
             <CardContent className="p-4">
               <div className="flex items-center space-x-3 mb-3">
                 <Avatar className="h-10 w-10">
-                  <AvatarFallback className="bg-teal-100 text-teal-700">
+                  <AvatarFallback className="bg-primary/10 text-primary">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
@@ -486,7 +486,7 @@ const LeadAllocation = () => {
                       <div key={member.id} className="flex justify-between items-center p-3 border rounded-lg">
                         <div className="flex items-center space-x-3">
                           <Avatar className="h-8 w-8">
-                            <AvatarFallback className="bg-teal-100 text-teal-700 text-xs">
+                            <AvatarFallback className="bg-primary/10 text-primary text-xs">
                               {member.name.split(' ').map(n => n[0]).join('')}
                             </AvatarFallback>
                           </Avatar>

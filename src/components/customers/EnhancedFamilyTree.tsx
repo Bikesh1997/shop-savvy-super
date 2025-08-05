@@ -109,7 +109,7 @@ const EnhancedFamilyTree = ({ family, onAddFamilyMember, onContactMember }: Enha
                       <div className="flex items-center space-x-3">
                         <div className="relative">
                           <Avatar className="h-12 w-12">
-                            <AvatarFallback className={`${member.isCustomer ? 'bg-teal-100 text-teal-700' : 'bg-gray-100 text-gray-700'}`}>
+                            <AvatarFallback className={`${member.isCustomer ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-700'}`}>
                               {member.name.split(' ').map(n => n[0]).join('')}
                             </AvatarFallback>
                           </Avatar>

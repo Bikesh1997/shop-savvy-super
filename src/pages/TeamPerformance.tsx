@@ -295,7 +295,7 @@ const TeamPerformance = () => {
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <Avatar className="h-10 w-10">
-                          <AvatarFallback className="bg-teal-100 text-teal-700">
+                           <AvatarFallback className="bg-primary/10 text-primary">
                             {report.name.split(' ').map(n => n[0]).join('')}
                           </AvatarFallback>
                         </Avatar>
@@ -374,7 +374,7 @@ const TeamPerformance = () => {
             </div>
 
             <Avatar className="h-12 w-12 shrink-0">
-              <AvatarFallback className="bg-teal-100 text-teal-700">
+              <AvatarFallback className="bg-primary/10 text-primary">
                 {member.name.split(' ').map((n) => n[0]).join('')}
               </AvatarFallback>
             </Avatar>

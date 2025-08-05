@@ -107,11 +107,11 @@ const SupervisorTeamPerformance = ({
       >
         {/* Left side (Member Info) */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-8 h-8 bg-teal-100 text-teal-700 rounded-full font-bold text-sm">
+          <div className="flex items-center justify-center w-8 h-8 bg-primary/10 text-primary rounded-full font-bold text-sm">
             #{index + 1}
           </div>
           <Avatar>
-            <AvatarFallback className="bg-teal-100 text-teal-700">
+            <AvatarFallback className="bg-primary/10 text-primary">
               {member.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
