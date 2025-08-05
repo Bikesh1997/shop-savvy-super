@@ -101,11 +101,11 @@ const GameifiedKRAProgress = () => {
 
   const getLevelColor = (level: string) => {
     switch (level) {
-      case 'bronze': return 'bg-amber-100 text-amber-800 border-amber-200';
-      case 'silver': return 'bg-gray-100 text-gray-800 border-gray-200';
-      case 'gold': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'platinum': return 'bg-purple-100 text-purple-800 border-purple-200';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'bronze': return 'bg-warning/10 text-warning border-warning/20';
+      case 'silver': return 'bg-muted text-muted-foreground border-muted';
+      case 'gold': return 'bg-warning/15 text-warning border-warning/30';
+      case 'platinum': return 'bg-primary/10 text-primary border-primary/20';
+      default: return 'bg-muted text-muted-foreground';
     }
   };
 
@@ -122,12 +122,12 @@ const GameifiedKRAProgress = () => {
   const renderKRACard = (kra: KRAItem, progress: number, completed: boolean, celebrating: boolean) => (
     <Card
       key={kra.id}
-      className={`transition-all duration-300 ${celebrating ? 'animate-pulse ring-4 ring-yellow-400' : ''} ${completed ? 'bg-green-50 border-green-200' : ''}`}
+      className={`transition-all duration-300 ${celebrating ? 'animate-pulse ring-4 ring-warning' : ''} ${completed ? 'bg-success/10 border-success/30' : ''}`}
     >
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center justify-between text-lg">
           <div className="flex items-center">
-            <kra.icon className="mr-2 h-5 w-5 text-blue-600" />
+            <kra.icon className="mr-2 h-5 w-5 text-info" />
             {kra.title}
           </div>
           <Badge className={getLevelColor(kra.level)}>
@@ -154,12 +154,12 @@ const GameifiedKRAProgress = () => {
             <Progress value={progress} className="h-3" />
           </div>
 
-          <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+          <div className="flex items-center justify-between p-3 bg-info/10 rounded-lg">
             <div className="flex items-center">
-              <Star className="h-4 w-4 text-yellow-500 mr-2" />
+              <Star className="h-4 w-4 text-warning mr-2" />
               <span className="text-sm font-medium">XP Earned</span>
             </div>
-            <div className="text-sm font-bold text-blue-600">
+            <div className="text-sm font-bold text-info">
               {kra.current * kra.xpReward} / {kra.target * kra.xpReward} XP
             </div>
           </div>
@@ -169,8 +169,8 @@ const GameifiedKRAProgress = () => {
               <>
                 <Button
                   size="sm"
-                  className="flex-1 text-[#23a07c] hover:bg-[#e3f6f1]"
-                  style={{ backgroundColor: '#d2f1e7' }}
+                  variant="success"
+                  className="flex-1"
                   onClick={() => addProgress(kra.id, 1)}
                 >
                   <Zap className="mr-1 h-3 w-3" />
@@ -187,8 +187,8 @@ const GameifiedKRAProgress = () => {
                 </Button>
               </>
             ) : (
-              <div className="flex-1 text-center p-2 bg-green-100 rounded-lg">
-                <div className="flex items-center justify-center text-green-700">
+              <div className="flex-1 text-center p-2 bg-success/10 rounded-lg">
+                <div className="flex items-center justify-center text-success">
                   <Trophy className="h-4 w-4 mr-2" />
                   <span className="font-medium">Mission Complete!</span>
                 </div>
@@ -227,7 +227,7 @@ const GameifiedKRAProgress = () => {
                   <span>Overall KRA Progress</span>
                   <span>{Math.round(overallProgress)}% Complete</span>
                 </div>
-                <Progress value={overallProgress} className="h-3 bg-green-400/30" />
+                <Progress value={overallProgress} className="h-3 bg-success/30" />
               </div>
   
               {/* XP Summary */}
@@ -254,10 +254,10 @@ const GameifiedKRAProgress = () => {
                     return (
                       <AccordionItem key={kra.id} value={kra.id}>
                         <AccordionTrigger className="text-sm font-medium">
-                          <div className="flex items-center space-x-2">
-                            <kra.icon className="h-4 w-4 text-blue-600" />
-                            <span>{kra.title}</span>
-                          </div>
+                        <div className="flex items-center space-x-2">
+                          <kra.icon className="h-4 w-4 text-info" />
+                          <span>{kra.title}</span>
+                        </div>
                         </AccordionTrigger>
                         <AccordionContent>
                           {renderKRACard(kra, progress, completed, celebrating)}

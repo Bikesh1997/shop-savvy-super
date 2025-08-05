@@ -132,28 +132,28 @@ const GameifiedTaskList = () => {
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'visit': return <MapPin className="h-4 w-4 text-blue-600" />;
-      case 'call': return <Phone className="h-4 w-4 text-green-600" />;
-      case 'meeting': return <Users className="h-4 w-4 text-purple-600" />;
-      case 'documentation': return <FileText className="h-4 w-4 text-orange-600" />;
-      default: return <Target className="h-4 w-4 text-gray-600" />;
+      case 'visit': return <MapPin className="h-4 w-4 text-info" />;
+      case 'call': return <Phone className="h-4 w-4 text-success" />;
+      case 'meeting': return <Users className="h-4 w-4 text-primary" />;
+      case 'documentation': return <FileText className="h-4 w-4 text-warning" />;
+      default: return <Target className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'easy': return 'bg-green-100 text-green-800 border-green-200';
-      case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'hard': return 'bg-red-100 text-red-800 border-red-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'easy': return 'bg-success/10 text-success border-success/20';
+      case 'medium': return 'bg-warning/10 text-warning border-warning/20';
+      case 'hard': return 'bg-danger/10 text-danger border-danger/20';
+      default: return 'bg-muted text-muted-foreground border-muted';
     }
   };
 
-  const getStatusColor = (status: string) => {
+  const getStatusIndicatorColor = (status: string) => {
     switch (status) {
-      case 'completed': return 'bg-green-500';
-      case 'in_progress': return 'bg-blue-500';
-      default: return 'bg-gray-300';
+      case 'completed': return 'bg-success';
+      case 'in_progress': return 'bg-info';
+      default: return 'bg-muted';
     }
   };
 
@@ -210,11 +210,11 @@ const GameifiedTaskList = () => {
       {/* Task List */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center justify-between text-xl">
-            <div className="flex items-center">
-              <Trophy className="mr-2 h-6 w-6 text-yellow-500" />
-              Today's Missions 🚀
-            </div>
+            <CardTitle className="flex items-center justify-between text-xl">
+              <div className="flex items-center">
+                <Trophy className="mr-2 h-6 w-6 text-warning" />
+                Today's Missions 🚀
+              </div>
             <Badge className="bg-blue-100 text-blue-800">
               {completedTasks}/{tasks.length} Complete
             </Badge>
@@ -229,11 +229,11 @@ const GameifiedTaskList = () => {
                 <div 
                   key={task.id} 
                   className={`border rounded-lg p-4 transition-all duration-300 ${
-                    isCelebrating ? 'animate-bounce-in ring-4 ring-yellow-400 bg-yellow-50' : ''
+                    isCelebrating ? 'animate-bounce-in ring-4 ring-warning bg-warning/10' : ''
                   } ${
-                    task.status === 'completed' ? 'bg-green-50 border-green-200' : 
-                    task.status === 'in_progress' ? 'bg-blue-50 border-blue-200' : 
-                    'bg-white border-gray-200'
+                    task.status === 'completed' ? 'bg-success/10 border-success/20' : 
+                    task.status === 'in_progress' ? 'bg-info/10 border-info/20' : 
+                    'bg-white border-border'
                   }`}
                 >
                   <div className="flex items-start space-x-4">
@@ -266,7 +266,7 @@ const GameifiedTaskList = () => {
                         
                         {/* XP Reward */}
                         <div className="text-right">
-                          <div className="flex items-center text-yellow-600">
+                          <div className="flex items-center text-warning">
                             <Star className="h-4 w-4 mr-1" />
                             <span className="font-bold">+{task.xpReward} XP</span>
                           </div>
@@ -302,7 +302,7 @@ const GameifiedTaskList = () => {
                         {task.status === 'pending' && (
                           <Button 
                             size="sm" 
-                            className="bg-blue-600 hover:bg-blue-700"
+                            variant="info"
                             onClick={() => startTask(task.id)}
                           >
                             <Zap className="mr-1 h-3 w-3" />
@@ -313,7 +313,7 @@ const GameifiedTaskList = () => {
                         {task.status === 'in_progress' && (
                           <Button 
                             size="sm" 
-                            className="bg-green-600 hover:bg-green-700"
+                            variant="success"
                             onClick={() => completeTask(task.id)}
                           >
                             <CheckCircle className="mr-1 h-3 w-3" />
@@ -322,7 +322,7 @@ const GameifiedTaskList = () => {
                         )}
                         
                         {task.status === 'completed' && (
-                          <div className="flex items-center text-green-600">
+                          <div className="flex items-center text-success">
                             <Trophy className="h-4 w-4 mr-2" />
                             <span className="text-sm font-medium">Mission Complete! 🎉</span>
                           </div>
@@ -330,7 +330,7 @@ const GameifiedTaskList = () => {
                         
                         {/* Progress Indicator */}
                         <div className="ml-auto">
-                          <div className={`w-3 h-3 rounded-full ${getStatusColor(task.status)}`}></div>
+                          <div className={`w-3 h-3 rounded-full ${getStatusIndicatorColor(task.status)}`}></div>
                         </div>
                       </div>
                     </div>
@@ -346,38 +346,38 @@ const GameifiedTaskList = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center text-lg">
-            <Target className="mr-2 h-5 w-5 text-green-500" />
+            <Target className="mr-2 h-5 w-5 text-success" />
             Daily Performance 📊
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="p-4 bg-blue-50 rounded-lg text-center">
-              <div className="text-2xl font-bold text-blue-700">{totalXP}</div>
-              <div className="text-sm text-blue-600">Total XP Earned</div>
-              <div className="text-xs text-gray-500 mt-1">Great progress! 🌟</div>
+            <div className="p-4 bg-info/10 rounded-lg text-center">
+              <div className="text-2xl font-bold text-info">{totalXP}</div>
+              <div className="text-sm text-info">Total XP Earned</div>
+              <div className="text-xs text-muted-foreground mt-1">Great progress! 🌟</div>
             </div>
             
-            <div className="p-4 bg-green-50 rounded-lg text-center">
-              <div className="text-2xl font-bold text-green-700">{completedTasks}</div>
-              <div className="text-sm text-green-600">Missions Complete</div>
-              <div className="text-xs text-gray-500 mt-1">Keep it up! 💪</div>
+            <div className="p-4 bg-success/10 rounded-lg text-center">
+              <div className="text-2xl font-bold text-success">{completedTasks}</div>
+              <div className="text-sm text-success">Missions Complete</div>
+              <div className="text-xs text-muted-foreground mt-1">Keep it up! 💪</div>
             </div>
             
-            <div className="p-4 bg-yellow-50 rounded-lg text-center">
-              <div className="text-2xl font-bold text-yellow-700">
+            <div className="p-4 bg-warning/10 rounded-lg text-center">
+              <div className="text-2xl font-bold text-warning">
                 {tasks.reduce((sum, t) => t.status === 'completed' ? sum + t.timeEstimate : sum, 0)} min
               </div>
-              <div className="text-sm text-yellow-600">Time Invested</div>
-              <div className="text-xs text-gray-500 mt-1">Productive day! ⏰</div>
+              <div className="text-sm text-warning">Time Invested</div>
+              <div className="text-xs text-muted-foreground mt-1">Productive day! ⏰</div>
             </div>
             
-            <div className="p-4 bg-purple-50 rounded-lg text-center">
-              <div className="text-2xl font-bold text-purple-700">
+            <div className="p-4 bg-primary/10 rounded-lg text-center">
+              <div className="text-2xl font-bold text-primary">
                 {Math.round((completedTasks / tasks.length) * 100)}%
               </div>
-              <div className="text-sm text-purple-600">Success Rate</div>
-              <div className="text-xs text-gray-500 mt-1">Outstanding! 🎯</div>
+              <div className="text-sm text-primary">Success Rate</div>
+              <div className="text-xs text-muted-foreground mt-1">Outstanding! 🎯</div>
             </div>
           </div>
         </CardContent>

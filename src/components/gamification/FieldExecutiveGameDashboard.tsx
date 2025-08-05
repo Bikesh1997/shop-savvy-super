@@ -256,7 +256,7 @@ const FieldExecutiveGameDashboard = () => {
           onClick={() => toggleCard("daily")}
         >
           <div className="flex items-center text-base font-semibold">
-            <Flame className="mr-2 h-5 w-5 text-orange-500" />
+            <Flame className="mr-2 h-5 w-5 text-warning" />
             Daily Stats ⚡
           </div>
           <span className="md:hidden text-sm text-gray-500">{openCard === "daily" ? "▲" : "▼"}</span>
@@ -265,30 +265,30 @@ const FieldExecutiveGameDashboard = () => {
         <div className={`p-3 space-y-3 ${openCard === "daily" ? "block" : "hidden"} md:block`}>
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center">
-              <Flame className="h-4 w-4 text-orange-500 mr-2" />
+              <Flame className="h-4 w-4 text-warning mr-2" />
               Daily Visit Streak
             </div>
-            <span className="bg-orange-100 text-orange-800 font-bold text-xs px-2 py-1 rounded">
+            <span className="bg-warning/10 text-warning font-bold text-xs px-2 py-1 rounded">
               {gameProgress.dailyStreak} days 🔥
             </span>
           </div>
 
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center">
-              <Calendar className="h-4 w-4 text-blue-500 mr-2" />
+              <Calendar className="h-4 w-4 text-info mr-2" />
               Weekly Visit Streak
             </div>
-            <span className="bg-blue-100 text-blue-800 font-bold text-xs px-2 py-1 rounded">
+            <span className="bg-info/10 text-info font-bold text-xs px-2 py-1 rounded">
               {gameProgress.weeklyStreak} weeks 📅
             </span>
           </div>
 
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center">
-              <Trophy className="h-4 w-4 text-yellow-500 mr-2" />
+              <Trophy className="h-4 w-4 text-warning mr-2" />
               Mission Progress
             </div>
-            <span className="bg-yellow-100 text-yellow-800 font-bold text-xs px-2 py-1 rounded">
+            <span className="bg-warning/10 text-warning font-bold text-xs px-2 py-1 rounded">
               {gameProgress.completedMissions}/{gameProgress.totalMissions} ⭐
             </span>
           </div>
@@ -302,7 +302,7 @@ const FieldExecutiveGameDashboard = () => {
           onClick={() => toggleCard("badges")}
         >
           <div className="flex items-center text-base font-semibold">
-            <Award className="mr-2 h-5 w-5 text-purple-500" />
+            <Award className="mr-2 h-5 w-5 text-primary" />
             Badges Earned 🏅
           </div>
           <span className="md:hidden text-sm text-gray-500">{openCard === "badges" ? "▲" : "▼"}</span>
@@ -314,7 +314,7 @@ const FieldExecutiveGameDashboard = () => {
               key={badge.id}
               className={`p-2 rounded border flex items-center ${
                 badge.earned
-                  ? "bg-yellow-50 border-yellow-200"
+                  ? "bg-warning/5 border-warning/20"
                   : "bg-gray-50 border-gray-200 opacity-60"
               }`}
             >
@@ -323,7 +323,7 @@ const FieldExecutiveGameDashboard = () => {
                 <h4 className="text-sm font-medium">{badge.name}</h4>
                 <p className="text-xs text-gray-600">{badge.description}</p>
               </div>
-              {badge.earned && <CheckCircle className="h-4 w-4 text-green-500 ml-auto" />}
+              {badge.earned && <CheckCircle className="h-4 w-4 text-success ml-auto" />}
             </div>
           ))}
         </div>
@@ -334,7 +334,7 @@ const FieldExecutiveGameDashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center text-lg">
-              <Zap className="mr-2 h-5 w-5 text-yellow-500" />
+              <Zap className="mr-2 h-5 w-5 text-warning" />
               Quick Start Mission 🚀
             </CardTitle>
           </CardHeader>
@@ -487,7 +487,7 @@ const FieldExecutiveGameDashboard = () => {
               +12% from last month
             </p>
           </div>
-          <Users size={36} className="text-blue-500 opacity-50" />
+          <Users size={36} className="text-info opacity-50" />
         </div>
       </CardContent>
     </Card>

@@ -75,6 +75,24 @@ export default {
         "button-bg": "hsl(var(--button-bg))",
         "button-hover": "hsl(var(--button-hover))",
         "button-text": "hsl(var(--button-text))",
+        // Semantic color tokens
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        danger: {
+          DEFAULT: "hsl(var(--danger))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        // Legacy theme colors
         "theme-success": "hsl(var(--success))",
         "theme-success-hover": "hsl(var(--success-hover))",
         "theme-warning": "hsl(var(--warning))",
