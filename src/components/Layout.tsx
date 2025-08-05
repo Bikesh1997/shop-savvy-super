@@ -18,7 +18,7 @@ import {
   Target,
   PieChart,
   Shield,
-  Settings,
+  Settings as SettingsIcon,
   HelpCircle,
   MessageSquare,
   Tag,
@@ -42,6 +42,7 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import SupportModal from '@/components/support/SupportModal';
 import { useToast } from '@/hooks/use-toast';
+import ThemeSettings from '@/components/Settings';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -50,6 +51,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [supportModalOpen, setSupportModalOpen] = useState(false);
+  const [settingsModalOpen, setSettingsModalOpen] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState('this-month');
   const [selectedFSO, setSelectedFSO] = useState('all-fsos');
   const [selectedRegion, setSelectedRegion] = useState('all-regions');
@@ -73,7 +75,7 @@ const Layout = ({ children }: LayoutProps) => {
     Target: Target,
     PieChart: PieChart,
     Shield: Shield,
-    Settings: Settings,
+    Settings: SettingsIcon,
     Tag: Tag,
     Calendar: Calendar,
     Trophy :Trophy,
@@ -231,9 +233,9 @@ alt="logo"
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Settings size={16} className="mr-2" />
-                    Settings
+                  <DropdownMenuItem onClick={() => setSettingsModalOpen(true)}>
+                    <SettingsIcon size={16} className="mr-2" />
+                    Theme Settings
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setSupportModalOpen(true)}>
                     <HelpCircle size={16} className="mr-2" />
@@ -409,6 +411,12 @@ alt="logo"
       <SupportModal 
         isOpen={supportModalOpen} 
         onClose={() => setSupportModalOpen(false)} 
+      />
+
+      {/* Settings Modal */}
+      <ThemeSettings 
+        isOpen={settingsModalOpen} 
+        onClose={() => setSettingsModalOpen(false)} 
       />
     </div>
   );

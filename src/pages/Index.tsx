@@ -19,7 +19,6 @@ const Index = () => {
         <PriceTracker />
         <SavingsCalculator />
         <Footer />
-        <Settings />
       </div>
     </ThemeProvider>
   );

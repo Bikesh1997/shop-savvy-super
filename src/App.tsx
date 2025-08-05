@@ -10,6 +10,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -97,7 +98,8 @@ const RoleBasedRoute = ({ children, featureId }: { children: React.ReactNode; fe
 const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -351,8 +353,9 @@ const App = () => (
           </HashRouter>
         </TooltipProvider>
       </AuthProvider>
-    </QueryClientProvider>
-  </ErrorBoundary>
+    </ThemeProvider>
+  </QueryClientProvider>
+</ErrorBoundary>
 );
 
 export default App;

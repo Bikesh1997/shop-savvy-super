@@ -83,10 +83,14 @@ const ColorPicker: React.FC<{
   );
 };
 
-const Settings: React.FC = () => {
+interface SettingsProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   const { colors, updateColors, resetTheme } = useTheme();
   const { toast } = useToast();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleReset = () => {
     resetTheme();
@@ -105,17 +109,7 @@ const Settings: React.FC = () => {
   };
 
   if (!isOpen) {
-    return (
-      <Button
-        onClick={() => setIsOpen(true)}
-        variant="outline"
-        size="sm"
-        className="fixed top-4 right-4 z-50"
-      >
-        <SettingsIcon className="w-4 h-4 mr-2" />
-        Settings
-      </Button>
-    );
+    return null;
   }
 
   return (
@@ -130,7 +124,7 @@ const Settings: React.FC = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setIsOpen(false)}
+              onClick={onClose}
               className="h-8 w-8 p-0"
             >
               ×
@@ -190,7 +184,7 @@ const Settings: React.FC = () => {
               Reset to Default
             </Button>
             <Button
-              onClick={() => setIsOpen(false)}
+              onClick={() => onClose()}
               className="flex-1"
             >
               Done
