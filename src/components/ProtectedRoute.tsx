@@ -9,10 +9,11 @@ import { ShieldX, Home } from 'lucide-react';
 
 interface ProtectedRouteProps {
   children: ReactNode;
-  requiredRole?: 'sales_executive' | 'supervisor';
+  requiredRole?: 'sales_executive' | 'supervisor' | 'inbound_agent' | 'relationship_manager' | 'admin';
+  requiredRoles?: ('sales_executive' | 'supervisor' | 'inbound_agent' | 'relationship_manager' | 'admin')[];
 }
 
-const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
+const ProtectedRoute = ({ children, requiredRole, requiredRoles }: ProtectedRouteProps) => {
   const { isAuthenticated, user, isLoading } = useAuth();
 
   if (isLoading) {
@@ -23,7 +24,17 @@ const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
     return <Navigate to="/login" replace />;
   }
 
-  if (requiredRole && user?.role !== requiredRole) {
+  const hasAccess = () => {
+    if (requiredRoles) {
+      return user?.role && requiredRoles.includes(user.role);
+    }
+    if (requiredRole) {
+      return user?.role === requiredRole;
+    }
+    return true;
+  };
+
+  if (!hasAccess()) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
         <Card className="max-w-md w-full">
