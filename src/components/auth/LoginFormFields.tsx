@@ -81,7 +81,7 @@ const LoginFormFields = ({
 
       <Button 
         type="submit" 
-        className="w-full h-12 bg-teal-600 hover:bg-teal-700"
+        className="w-full h-12"
         disabled={isLoading}
       >
         {isLoading ? (

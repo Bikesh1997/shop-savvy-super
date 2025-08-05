@@ -152,7 +152,7 @@ const CallCustomerModal = ({ customer, isOpen, onOpenChange }: CallCustomerModal
           <div className="flex space-x-3">
             <Button 
               onClick={makeCall}
-              className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3"
+              className="flex-1 py-3" variant="success"
             >
               <Phone size={16} className="mr-2" />
               Start Call

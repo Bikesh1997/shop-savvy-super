@@ -74,17 +74,15 @@ const ClientInteractionDetails = ({ customerName }: { customerName: string }) =>
               <Label className="text-base font-medium">Personal Meeting Status</Label>
             </div>
             <div className="flex space-x-4">
-              <Button
+               <Button
                 variant={interactionData.personalMet ? "default" : "outline"}
                 onClick={() => setInteractionData({...interactionData, personalMet: true})}
-                className={interactionData.personalMet ? "bg-teal-600 hover:bg-teal-700" : ""}
               >
                 Met Personally
               </Button>
               <Button
-                variant={!interactionData.personalMet ? "default" : "outline"}
+                variant={!interactionData.personalMet ? "secondary" : "outline"}
                 onClick={() => setInteractionData({...interactionData, personalMet: false})}
-                className={!interactionData.personalMet ? "bg-gray-600 hover:bg-gray-700" : ""}
               >
                 Not Met Personally
               </Button>
@@ -178,7 +176,7 @@ const ClientInteractionDetails = ({ customerName }: { customerName: string }) =>
           <div className="flex justify-end">
             <Button 
               onClick={handleSave}
-              className="bg-teal-600 hover:bg-teal-700"
+              variant="default"
               disabled={!interactionData.date || !interactionData.time || !interactionData.modeOfInteraction}
             >
               <Save size={16} className="mr-2" />

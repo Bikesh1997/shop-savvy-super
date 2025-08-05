@@ -199,7 +199,7 @@ const GoalBasedNudges = ({ customerName, onCreatePlan }: GoalBasedNudgesProps) =
                 <div className="flex space-x-2">
                   <Button 
                     size="sm" 
-                    className="bg-teal-600 hover:bg-teal-700"
+                    variant="default"
                     onClick={() => onCreatePlan(goal.id)}
                   >
                     Create Action Plan

@@ -340,7 +340,7 @@ alt="logo"
      
            <Button
              onClick={handleApplyFilters}
-             className="bg-teal-600 hover:bg-teal-700 h-8 sm:h-10 px-2 sm:px-4 text-xs sm:text-sm"
+             className="h-8 sm:h-10 px-2 sm:px-4 text-xs sm:text-sm"
              size="sm"
            >
              Apply

@@ -290,7 +290,7 @@ const AddRuleModal: React.FC<AddRuleModalProps> = ({ isOpen, onClose, onAdd }) =
             </Button>
             <Button 
               type="submit" 
-              className="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-sm sm:text-base"
+              className="w-full sm:w-auto text-sm sm:text-base"
             >
               Create Rule
             </Button>

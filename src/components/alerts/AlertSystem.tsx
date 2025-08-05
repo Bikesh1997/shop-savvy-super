@@ -92,7 +92,7 @@ const AlertSystem = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button size="sm" className="bg-teal-600 hover:bg-teal-700 relative">
+        <Button size="sm" className="relative">
           <Bell size={16} className="mr-2" />
           Alerts
           {unreadCount > 0 && (

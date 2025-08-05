@@ -222,7 +222,7 @@ const SmartNudges = () => {
                   <Button
                     size="sm"
                     onClick={() => handleStart(nudge)}
-                    className="bg-[#23a07c] hover:bg-[#1c8a6b] text-white"
+                    variant="success"
                   >
                     Start Mission <ChevronRight className="ml-1 h-4 w-4" />
                   </Button>
@@ -231,7 +231,7 @@ const SmartNudges = () => {
                   <Button
                     size="sm"
                     onClick={() => completeNudge(nudge.id)}
-                    className="bg-green-600 hover:bg-green-700 text-white"
+                     variant="success"
                   >
                     Complete <CheckCircle className="ml-1 h-4 w-4" />
                   </Button>
@@ -240,7 +240,7 @@ const SmartNudges = () => {
                   <Link to={nudge.navigationPath}>
                     <Button
                       size="sm"
-                      className="bg-green-600 hover:bg-green-700 text-white"
+                      variant="success"
                     >
                       <CheckCircle className="h-4 w-4 mr-1" />
                       View Result

@@ -174,6 +174,68 @@ const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
             />
           </div>
 
+          <div className="space-y-4">
+            <h3 className="text-sm font-medium">Action Colors</h3>
+            
+            <div className="grid grid-cols-2 gap-3">
+              <ColorPicker
+                label="Success"
+                value={colors.success}
+                onChange={(value) => handleColorChange('success', value)}
+                description="Green actions"
+              />
+              
+              <ColorPicker
+                label="Success Hover"
+                value={colors.successHover}
+                onChange={(value) => handleColorChange('successHover', value)}
+                description="Success hover state"
+              />
+              
+              <ColorPicker
+                label="Warning"
+                value={colors.warning}
+                onChange={(value) => handleColorChange('warning', value)}
+                description="Warning actions"
+              />
+              
+              <ColorPicker
+                label="Warning Hover"
+                value={colors.warningHover}
+                onChange={(value) => handleColorChange('warningHover', value)}
+                description="Warning hover state"
+              />
+              
+              <ColorPicker
+                label="Danger"
+                value={colors.danger}
+                onChange={(value) => handleColorChange('danger', value)}
+                description="Destructive actions"
+              />
+              
+              <ColorPicker
+                label="Danger Hover"
+                value={colors.dangerHover}
+                onChange={(value) => handleColorChange('dangerHover', value)}
+                description="Danger hover state"
+              />
+              
+              <ColorPicker
+                label="Info"
+                value={colors.info}
+                onChange={(value) => handleColorChange('info', value)}
+                description="Informational actions"
+              />
+              
+              <ColorPicker
+                label="Info Hover"
+                value={colors.infoHover}
+                onChange={(value) => handleColorChange('infoHover', value)}
+                description="Info hover state"
+              />
+            </div>
+          </div>
+
           <div className="flex space-x-2 pt-4">
             <Button
               onClick={handleReset}

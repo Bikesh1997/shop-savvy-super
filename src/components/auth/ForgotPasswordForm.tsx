@@ -89,7 +89,7 @@ const ForgotPasswordForm = ({ onBack, onResetPassword }: ForgotPasswordFormProps
               <div className="flex flex-col gap-2">
                 <Button 
                   type="submit" 
-                  className="h-12 bg-teal-600 hover:bg-teal-700"
+                  className="h-12"
                   disabled={isLoading}
                 >
                   {isLoading ? (

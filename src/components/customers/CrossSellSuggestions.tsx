@@ -178,7 +178,7 @@ const CrossSellSuggestions = ({ customerName, segment, relationshipValue, onCrea
                 <div className="flex space-x-2">
                   <Button 
                     size="sm" 
-                    className="bg-teal-600 hover:bg-teal-700"
+                    variant="default"
                     onClick={() => onCreateOffer(suggestion.product)}
                   >
                     Create Offer

@@ -196,7 +196,7 @@ const CustomerDetailsModal = ({ customer, isOpen, onOpenChange }: CustomerDetail
                 </Button>
                 <Button 
                   size="sm" 
-                  className="bg-teal-600 hover:bg-teal-700 w-full sm:w-auto"
+                  className="w-full sm:w-auto"
                   onClick={() => setCallCustomerModalOpen(true)}
                 >
                   <Phone size={16} className="mr-2" />

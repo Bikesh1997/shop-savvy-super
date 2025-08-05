@@ -29,6 +29,16 @@
     --button-bg: var(--primary);
     --button-hover: 226 51% 35%;
     --button-text: 0 0% 100%;
+    
+    /* Color variant variables */
+    --success: 142 71% 45%;
+    --success-hover: 142 71% 40%;
+    --warning: 38 92% 50%;
+    --warning-hover: 38 92% 45%;
+    --danger: 0 84% 60%;
+    --danger-hover: 0 84% 55%;
+    --info: 217 91% 60%;
+    --info-hover: 217 91% 55%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

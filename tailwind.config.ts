@@ -71,6 +71,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Theme-aware button and action colors
+        "button-bg": "hsl(var(--button-bg))",
+        "button-hover": "hsl(var(--button-hover))",
+        "button-text": "hsl(var(--button-text))",
+        "theme-success": "hsl(var(--success))",
+        "theme-success-hover": "hsl(var(--success-hover))",
+        "theme-warning": "hsl(var(--warning))",
+        "theme-warning-hover": "hsl(var(--warning-hover))",
+        "theme-danger": "hsl(var(--danger))",
+        "theme-danger-hover": "hsl(var(--danger-hover))",
+        "theme-info": "hsl(var(--info))",
+        "theme-info-hover": "hsl(var(--info-hover))",
       },
       borderRadius: {
         lg: "var(--radius)",

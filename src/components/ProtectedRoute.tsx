@@ -49,7 +49,7 @@ const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
             </p>
             <Button 
               onClick={() => window.location.href = '/dashboard'}
-              className="bg-teal-600 hover:bg-teal-700"
+              className=""
             >
               <Home className="w-4 h-4 mr-2" />
               Go to Dashboard

@@ -122,7 +122,7 @@ const SetAlertModal = ({ customerName, isOpen, onOpenChange }: SetAlertModalProp
           <div className="flex space-x-3 pt-4">
             <Button 
               onClick={handleSetAlerts}
-              className="flex-1 bg-teal-600 hover:bg-teal-700"
+              className="flex-1"
               disabled={selectedAlerts.length === 0}
             >
               Set Alerts ({selectedAlerts.length})

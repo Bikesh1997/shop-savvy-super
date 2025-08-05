@@ -74,7 +74,7 @@ const NewCampaignModal = ({ onAddCampaign }: NewCampaignModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="bg-blue-600 text-white hover:bg-blue-700">
+        <Button variant="info">
           <Plus size={16} className="mr-2" />
           New Campaign
         </Button>
@@ -178,7 +178,7 @@ const NewCampaignModal = ({ onAddCampaign }: NewCampaignModalProps) => {
           </div>
 
           <div className="flex space-x-2 pt-4">
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+            <Button type="submit" variant="info">
               Create Campaign
             </Button>
             <Button type="button" variant="outline" onClick={() => setIsOpen(false)}>

@@ -194,7 +194,7 @@ const TodaysPlan = () => {
                         <p className="text-xs text-gray-500 mt-1">ETA: {customer.eta}</p>
                       </div>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                     <Button size="sm" variant="success">
                       <MapPin size={12} className="mr-1" />
                       Navigate
                     </Button>
@@ -231,7 +231,7 @@ const TodaysPlan = () => {
                     </div>
                     <Button 
                       size="sm" 
-                      className="bg-red-600 hover:bg-red-700"
+                      variant="danger"
                       onClick={() => handleCallNow(lead)}
                     >
                       <Phone size={12} className="mr-1" />
@@ -374,7 +374,7 @@ const TodaysPlan = () => {
                 <div className="flex space-x-2">
                   <Button 
                     onClick={handleStartCall}
-                    className="flex-1 bg-green-600 hover:bg-green-700"
+                     className="flex-1" variant="success"
                   >
                     <PhoneCall size={16} className="mr-2" />
                     Start Call
@@ -441,7 +441,7 @@ const TodaysPlan = () => {
                   <div className="flex space-x-2">
                     <Button 
                       size="sm" 
-                      className="bg-green-600 hover:bg-green-700"
+                       variant="success"
                       onClick={() => handleCallNow(contact)}
                     >
                       <Phone size={12} className="mr-1" />
@@ -557,7 +557,7 @@ const TodaysPlan = () => {
                         <p className="text-xs text-gray-500 mt-1">{location.distance}</p>
                       </div>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                    <Button size="sm" variant="success">
                       <MapPin size={12} className="mr-1" />
                       Navigate
                     </Button>
@@ -585,7 +585,7 @@ const TodaysPlan = () => {
               <div className="flex space-x-2">
                 <Button 
                   onClick={handleStartCall}
-                  className="flex-1 bg-green-600 hover:bg-green-700"
+                  className="flex-1" variant="success"
                 >
                   <PhoneCall size={16} className="mr-2" />
                   Start Call

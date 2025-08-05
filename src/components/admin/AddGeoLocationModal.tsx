@@ -223,7 +223,7 @@ const AddGeoLocationModal: React.FC<AddGeoLocationModalProps> = ({
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+            <Button type="submit">
               Add Location
             </Button>
           </div>
