@@ -140,7 +140,7 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
             {Math.round(growthRate)}% growth rate
           </>
         ),
-        icon: <Target size={48} className="text-blue-500 opacity-50" />,
+        icon: <Target size={48} className="text-info opacity-50" />,
       },
       {
         title: 'Target Achievement',
@@ -156,13 +156,13 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
         icon: (
           <div
             className={`p-2 rounded-full ${
-              isOnTrack ? 'bg-green-100' : 'bg-red-100'
+              isOnTrack ? 'bg-success/10' : 'bg-danger/10'
             }`}
           >
             {isOnTrack ? (
-              <TrendingUp className="h-6 w-6 text-green-600" />
+              <TrendingUp className="h-6 w-6 text-success" />
             ) : (
-              <AlertTriangle className="h-6 w-6 text-red-600" />
+              <AlertTriangle className="h-6 w-6 text-danger" />
             )}
           </div>
         ),
@@ -172,7 +172,7 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
         value: `₹${projectedRevenue}L`,
         subtitle: 'Based on current avg. deal size',
         icon: (
-          <IndianRupee size={48} className="text-green-500 opacity-50" />
+          <IndianRupee size={48} className="text-success opacity-50" />
         ),
       },
       {
@@ -182,7 +182,7 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
           currentPerformance.monthlyTarget -
           currentPerformance.convertedLeads
         } more conversions`,
-        icon: <Calendar size={48} className="text-purple-500 opacity-50" />,
+        icon: <Calendar size={48} className="text-primary opacity-50" />,
       },
     ];
 
@@ -210,7 +210,7 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
         <AccordionItem value="sales">
           <AccordionTrigger className="text-left text-xl font-bold px-4 py-3 hover:bg-muted rounded-md transition">
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-teal-600" />
+              <TrendingUp className="h-5 w-5 text-success" />
               Sales Projections & Forecasts
             </div>
           </AccordionTrigger>
@@ -328,17 +328,17 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-blue-600" />
+            <TrendingUp className="h-5 w-5 text-info" />
             AI-Powered Insights
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-              <h4 className="font-medium text-blue-900 mb-2">
+            <div className="p-4 bg-info/10 rounded-lg border-l-4 border-info">
+              <h4 className="font-medium text-info mb-2">
                 Performance Analysis
               </h4>
-              <p className="text-sm text-blue-800">
+              <p className="text-sm text-info/80">
                 Based on your current conversion rate of{' '}
                 {dailyConversionRate.toFixed(1)} leads per day, you're{' '}
                 {isOnTrack ? 'on track to exceed' : 'likely to fall short of'}{' '}
@@ -351,11 +351,11 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
               </p>
             </div>
 
-            <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-              <h4 className="font-medium text-green-900 mb-2">
+            <div className="p-4 bg-success/10 rounded-lg border-l-4 border-success">
+              <h4 className="font-medium text-success mb-2">
                 Optimization Opportunity
               </h4>
-              <p className="text-sm text-green-800">
+              <p className="text-sm text-success/80">
                 To reach your target, focus on {daysRemaining} high-priority
                 leads in the next {daysRemaining} days. Increasing your daily
                 conversion rate by just 0.5 leads could boost your month-end
@@ -364,11 +364,11 @@ const ProjectionSection = ({ currentPerformance }: ProjectionSectionProps) => {
             </div>
 
             {!isOnTrack && (
-              <div className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
-                <h4 className="font-medium text-orange-900 mb-2">
+              <div className="p-4 bg-warning/10 rounded-lg border-l-4 border-warning">
+                <h4 className="font-medium text-warning mb-2">
                   Action Required
                 </h4>
-                <p className="text-sm text-orange-800">
+                <p className="text-sm text-warning/80">
                   Consider prioritizing follow-ups with qualified leads and
                   scheduling additional customer visits to bridge the gap of{' '}
                   {currentPerformance.monthlyTarget -

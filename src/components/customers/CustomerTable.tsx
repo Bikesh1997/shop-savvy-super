@@ -142,8 +142,8 @@ const CustomerTable = ({ customers, selectedCustomer, onCustomerSelect }: Custom
                     return (
                       <TableRow
                         key={customer.key}
-                        className={`cursor-pointer hover:bg-gray-50 ${
-                          selectedCustomer === customer.key ? 'bg-teal-50 border-l-4 border-l-teal-500' : ''
+                        className={`cursor-pointer hover:bg-accent/50 ${
+                          selectedCustomer === customer.key ? 'bg-primary/10 border-l-4 border-l-primary' : ''
                         }`}
                         onClick={() => onCustomerSelect(customer.key)}
                       >
