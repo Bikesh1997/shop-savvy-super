@@ -19,10 +19,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Themed variants for global consistency
-        success: "bg-theme-success text-white hover:bg-theme-success-hover",
-        warning: "bg-theme-warning text-white hover:bg-theme-warning-hover",
-        danger: "bg-theme-danger text-white hover:bg-theme-danger-hover",
-        info: "bg-theme-info text-white hover:bg-theme-info-hover",
+        success: "bg-[hsl(var(--success))] text-white hover:bg-[hsl(var(--success-hover))]",
+        warning: "bg-[hsl(var(--warning))] text-white hover:bg-[hsl(var(--warning-hover))]",
+        danger: "bg-[hsl(var(--danger))] text-white hover:bg-[hsl(var(--danger-hover))]",
+        info: "bg-[hsl(var(--info))] text-white hover:bg-[hsl(var(--info-hover))]",
       },
       size: {
         default: "h-10 px-4 py-2",

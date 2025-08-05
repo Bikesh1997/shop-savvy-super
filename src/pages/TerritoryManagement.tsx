@@ -173,7 +173,7 @@ const TerritoryManagement = () => {
         
         <Dialog open={isCreateModalOpen} onOpenChange={setIsCreateModalOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-teal-600 hover:bg-teal-700">
+            <Button>
               <Plus size={16} className="mr-2" />
               Create Territory
             </Button>
@@ -229,7 +229,7 @@ const TerritoryManagement = () => {
                 <Button type="button" variant="outline" onClick={() => setIsCreateModalOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+                <Button type="submit">
                   Create Territory
                 </Button>
               </div>
@@ -358,7 +358,7 @@ const TerritoryManagement = () => {
                     <div className="mt-3">
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
-                          className="bg-teal-600 h-2 rounded-full" 
+                          className="bg-[hsl(var(--primary))] h-2 rounded-full"
                           style={{ width: `${territory.performance}%` }}
                         ></div>
                       </div>
@@ -424,7 +424,7 @@ const TerritoryManagement = () => {
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-teal-600 h-2 rounded-full" style={{ 
+                      <div className="bg-[hsl(var(--primary))] h-2 rounded-full" style={{ 
                         width: `${(territories.reduce((sum, t) => sum + t.achieved, 0) / territories.reduce((sum, t) => sum + t.monthlyTarget, 0)) * 100}%` 
                       }}></div>
                     </div>
@@ -586,7 +586,7 @@ const TerritoryManagement = () => {
                 <Button type="button" variant="outline" onClick={() => setIsEditModalOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+                <Button type="submit">
                   Update Territory
                 </Button>
               </div>

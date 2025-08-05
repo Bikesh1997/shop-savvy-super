@@ -59,7 +59,7 @@ class ErrorBoundary extends Component<Props, State> {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
           <Card className="max-w-md w-full">
             <CardHeader className="text-center">
-              <div className="mx-auto w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <div className="mx-auto w-12 h-12 bg-[hsl(var(--danger))]/20 rounded-full flex items-center justify-center mb-4">
                 <AlertTriangle className="w-6 h-6 text-red-600" />
               </div>
               <CardTitle className="text-xl">Something went wrong</CardTitle>

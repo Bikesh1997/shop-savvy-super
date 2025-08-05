@@ -168,7 +168,7 @@ const SetTargetsModal = ({ isOpen, onClose, preSelectedMember }: SetTargetsModal
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>
-            <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+            <Button type="submit">
               Set Targets
             </Button>
           </div>

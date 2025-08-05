@@ -303,7 +303,7 @@ const RuleManagement = () => {
         </div>
         <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-teal-600 hover:bg-teal-700">
+            <Button>
               <Plus size={16} className="mr-2" />
               Add Rule
             </Button>
@@ -408,7 +408,7 @@ const RuleManagement = () => {
               </div>
 
               <div className="flex space-x-3 pt-4">
-                <Button type="submit" className="flex-1 bg-teal-600 hover:bg-teal-700">
+                <Button type="submit" className="flex-1">
                   {editingRule ? 'Update Rule' : 'Create Rule'}
                 </Button>
                 <Button 

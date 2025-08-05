@@ -82,9 +82,9 @@ const AlertSystem = () => {
 
   const getAlertColor = (type: string) => {
     switch (type) {
-      case 'urgent': return 'bg-red-100 border-red-200';
-      case 'warning': return 'bg-yellow-100 border-yellow-200';
-      case 'info': return 'bg-blue-100 border-blue-200';
+      case 'urgent': return 'bg-[hsl(var(--danger))]/20 border-[hsl(var(--danger))]/30';
+      case 'warning': return 'bg-[hsl(var(--warning))]/20 border-[hsl(var(--warning))]/30';
+      case 'info': return 'bg-[hsl(var(--info))]/20 border-[hsl(var(--info))]/30';
       default: return 'bg-gray-100 border-gray-200';
     }
   };
@@ -96,7 +96,7 @@ const AlertSystem = () => {
           <Bell size={16} className="mr-2" />
           Alerts
           {unreadCount > 0 && (
-            <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center p-0">
+            <Badge className="absolute -top-2 -right-2 bg-[hsl(var(--danger))] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center p-0">
               {unreadCount}
             </Badge>
           )}

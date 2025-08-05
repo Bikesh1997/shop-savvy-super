@@ -132,7 +132,7 @@ const TeamSettingsModal = ({ isOpen, onClose }: TeamSettingsModalProps) => {
           <Button variant="outline" onClick={onClose}>
             Cancel
           </Button>
-          <Button onClick={handleSave} className="bg-teal-600 hover:bg-teal-700">
+          <Button onClick={handleSave}>
             Save Settings
           </Button>
         </div>

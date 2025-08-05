@@ -150,7 +150,7 @@ const UserManagement = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">User Management</h1>
-        <Button onClick={() => setAddModalOpen(true)} className="bg-teal-600 hover:bg-teal-700">
+        <Button onClick={() => setAddModalOpen(true)}>
           <UserPlus className="mr-2 h-4 w-4" />
           Add User
         </Button>

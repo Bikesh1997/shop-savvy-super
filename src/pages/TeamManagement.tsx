@@ -200,7 +200,7 @@ const TeamManagement = () => {
             Auto-Assign
           </Button>
           <Button 
-            className="bg-teal-600 hover:bg-teal-700"
+            className=""
             onClick={() => setIsAddMemberOpen(true)}
           >
             <UserPlus size={16} className="mr-2" />

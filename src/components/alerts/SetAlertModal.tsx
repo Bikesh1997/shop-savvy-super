@@ -79,7 +79,7 @@ const SetAlertModal = ({ customerName, isOpen, onOpenChange }: SetAlertModalProp
       <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center">
-            <Bell size={20} className="mr-2 text-teal-600" />
+            <Bell size={20} className="mr-2 text-[hsl(var(--primary))]" />
             Set Alerts for {customerName}
           </DialogTitle>
         </DialogHeader>
@@ -99,7 +99,7 @@ const SetAlertModal = ({ customerName, isOpen, onOpenChange }: SetAlertModalProp
                   key={alert.id}
                   onClick={() => toggleAlert(alert.id)}
                   className={`p-3 border rounded-lg cursor-pointer transition-colors ${
-                    isSelected ? 'border-teal-500 bg-teal-50' : 'border-gray-200 hover:border-gray-300'
+                    isSelected ? 'border-primary bg-primary/10' : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
                   <div className="flex items-start space-x-3">
@@ -111,7 +111,7 @@ const SetAlertModal = ({ customerName, isOpen, onOpenChange }: SetAlertModalProp
                       <p className="text-sm text-gray-600">{alert.description}</p>
                     </div>
                     {isSelected && (
-                      <Badge className="bg-teal-100 text-teal-800">Selected</Badge>
+                      <Badge variant="secondary">Selected</Badge>
                     )}
                   </div>
                 </div>

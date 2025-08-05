@@ -440,7 +440,7 @@ const TaskManagement = () => {
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div 
-                              className="bg-teal-600 h-2 rounded-full" 
+                              className="bg-[hsl(var(--primary))] h-2 rounded-full" 
                               style={{ width: `${campaign.progress}%` }}
                             ></div>
                           </div>

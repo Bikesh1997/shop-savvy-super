@@ -147,7 +147,7 @@ const EditTaskModal = ({ task, isOpen, onOpenChange, onEditTask }: EditTaskModal
           </div>
 
           <div className="flex space-x-2 pt-4">
-            <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+            <Button type="submit">
               Update Task
             </Button>
             <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>

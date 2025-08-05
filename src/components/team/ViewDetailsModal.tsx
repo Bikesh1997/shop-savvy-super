@@ -164,7 +164,7 @@ const ViewDetailsModal = ({ isOpen, onClose, member }: ViewDetailsModalProps) =>
                 <p className="text-sm text-gray-600 mb-2">Achievement Progress</p>
                 <div className="w-full bg-gray-200 rounded-full h-3">
                   <div 
-                    className="bg-teal-600 h-3 rounded-full transition-all duration-300" 
+                    className="bg-[hsl(var(--primary))] h-3 rounded-full transition-all duration-300" 
                     style={{ width: `${(member.targets.achieved / member.targets.monthly) * 100}%` }}
                   ></div>
                 </div>

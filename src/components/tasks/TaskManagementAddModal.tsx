@@ -78,7 +78,7 @@ const TaskManagementAddModal = ({ onAddTask }: TaskManagementAddModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-teal-600 hover:bg-teal-700">
+        <Button>
           <Plus size={16} className="mr-2" />
           Add Task
         </Button>
@@ -192,7 +192,7 @@ const TaskManagementAddModal = ({ onAddTask }: TaskManagementAddModalProps) => {
           </div>
 
           <div className="flex space-x-2 pt-4">
-            <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+            <Button type="submit">
               Add Task
             </Button>
             <Button type="button" variant="outline" onClick={() => setIsOpen(false)}>

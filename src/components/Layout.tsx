@@ -205,7 +205,7 @@ alt="logo"
               </div>
               
               {/* Role Badge */}
-              <Badge variant="secondary" className="bg-teal-100 text-teal-800 text-xs hidden sm:inline-flex">
+              <Badge variant="secondary" className="text-xs hidden sm:inline-flex">
                 {getRoleDisplay(user?.role || '')}
                 {/* {user?.department && ` - ${getDepartmentDisplay(user.department)}`} */}
               </Badge>
@@ -214,7 +214,7 @@ alt="logo"
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center space-x-1 sm:space-x-2 p-1 sm:p-2">
                     <Avatar className="h-6 w-6 sm:h-8 sm:w-8">
-                      <AvatarFallback className="bg-teal-100 text-teal-700 text-xs">
+                      <AvatarFallback className="text-xs">
                         {user?.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
@@ -227,7 +227,7 @@ alt="logo"
                     <p className="text-sm font-medium">{user?.name}</p>
                     <p className="text-xs text-gray-500">{user?.email}</p>
                     <p className="text-xs text-gray-500 sm:hidden">Branch: {user?.branch}</p>
-                    <Badge variant="secondary" className="bg-teal-100 text-teal-800 text-xs mt-1 sm:hidden">
+                    <Badge variant="secondary" className="text-xs mt-1 sm:hidden">
                       {getRoleDisplay(user?.role || '')}
                     </Badge>
                   </div>
@@ -376,7 +376,7 @@ alt="logo"
                     onClick={() => setSidebarOpen(false)}
                     className={`${
                       isActive(item.href)
-                        ? 'bg-teal-50 text-teal-700 border-r-2 border-teal-500'
+                        ? 'bg-primary/10 text-primary border-r-2 border-primary'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     } group flex items-center px-3 py-2 text-sm font-medium rounded-l-md transition-colors`}
                   >

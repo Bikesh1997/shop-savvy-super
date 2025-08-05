@@ -390,7 +390,7 @@ const LeadAllocation = () => {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-teal-600 h-2 rounded-full transition-all duration-300" 
+                    className="bg-[hsl(var(--primary))] h-2 rounded-full transition-all duration-300" 
                     style={{ width: `${Math.min((member.currentLeads / member.capacity) * 100, 100)}%` }}
                   ></div>
                 </div>

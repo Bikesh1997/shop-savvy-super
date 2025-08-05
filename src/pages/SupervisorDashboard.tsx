@@ -366,7 +366,7 @@ const SupervisorDashboard = () => {
 
     <Button 
       size="sm" 
-      className="bg-teal-600 hover:bg-teal-700 w-full sm:w-auto"
+      className="w-full sm:w-auto"
       onClick={() => setIsTeamSettingsModalOpen(true)}
     >
       <Settings size={16} className="mr-2" />

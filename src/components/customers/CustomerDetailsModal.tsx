@@ -419,7 +419,7 @@ const CustomerDetailsModal = ({ customer, isOpen, onOpenChange }: CustomerDetail
                                 </Badge>
                                 <Button 
                                   size="sm" 
-                                  className="bg-teal-600 hover:bg-teal-700 w-full sm:w-auto text-xs"
+                                  className="w-full sm:w-auto text-xs"
                                   onClick={() => handleCreateOffer(opportunity.product)}
                                 >
                                   Create Offer
@@ -491,7 +491,7 @@ const CustomerDetailsModal = ({ customer, isOpen, onOpenChange }: CustomerDetail
                                     <FileText size={12} className="mr-1" />
                                     View Details
                                   </Button>
-                                  <Button size="sm" className="bg-teal-600 hover:bg-teal-700 w-full sm:w-auto text-xs">
+                                  <Button size="sm" className="w-full sm:w-auto text-xs">
                                     <Phone size={12} className="mr-1" />
                                     Discuss Offer
                                   </Button>

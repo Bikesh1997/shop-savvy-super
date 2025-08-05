@@ -201,7 +201,7 @@ const TeamTasks = () => {
           <h1 className="text-2xl font-bold text-gray-900">Advanced Team Management</h1>
           <p className="text-gray-600">Complete team oversight with real-time monitoring and analytics</p>
         </div>
-        <Button className="bg-teal-600 hover:bg-teal-700" onClick={handleAssignTask}>
+        <Button className="" onClick={handleAssignTask}>
           <Plus size={16} className="mr-2" />
           Assign New Task
         </Button>
@@ -491,7 +491,7 @@ const TeamTasks = () => {
             </div>
 
             <div className="flex space-x-2 pt-4">
-              <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+              <Button type="submit">
                 Assign Task
               </Button>
               <Button type="button" variant="outline" onClick={() => setIsAssignTaskModalOpen(false)}>
