@@ -15,23 +15,45 @@ const ColorPicker: React.FC<{
 }> = ({ label, value, onChange, description }) => {
   // Convert HSL to hex for color input
   const hslToHex = (hsl: string) => {
-    const [h, s, l] = hsl.split(' ').map(val => parseFloat(val.replace('%', '')));
-    const hslColor = `hsl(${h}, ${s}%, ${l}%)`;
-    
-    // Create a temporary element to get computed color
-    const temp = document.createElement('div');
-    temp.style.color = hslColor;
-    document.body.appendChild(temp);
-    const computedColor = getComputedStyle(temp).color;
-    document.body.removeChild(temp);
-    
-    // Extract RGB values and convert to hex
-    const rgb = computedColor.match(/\d+/g);
-    if (rgb) {
-      const hex = '#' + rgb.map(x => parseInt(x).toString(16).padStart(2, '0')).join('');
-      return hex;
+    try {
+      // Handle undefined, null, or empty values
+      if (!hsl || typeof hsl !== 'string') {
+        return '#3b82f6'; // fallback blue
+      }
+
+      // Ensure the HSL string has the expected format
+      const trimmedHsl = hsl.trim();
+      if (!trimmedHsl.includes(' ')) {
+        return '#3b82f6'; // fallback if format is incorrect
+      }
+
+      const [h, s, l] = trimmedHsl.split(' ').map(val => parseFloat(val.replace('%', '')));
+      
+      // Validate parsed values
+      if (isNaN(h) || isNaN(s) || isNaN(l)) {
+        return '#3b82f6'; // fallback if parsing failed
+      }
+
+      const hslColor = `hsl(${h}, ${s}%, ${l}%)`;
+      
+      // Create a temporary element to get computed color
+      const temp = document.createElement('div');
+      temp.style.color = hslColor;
+      document.body.appendChild(temp);
+      const computedColor = getComputedStyle(temp).color;
+      document.body.removeChild(temp);
+      
+      // Extract RGB values and convert to hex
+      const rgb = computedColor.match(/\d+/g);
+      if (rgb && rgb.length >= 3) {
+        const hex = '#' + rgb.slice(0, 3).map(x => parseInt(x).toString(16).padStart(2, '0')).join('');
+        return hex;
+      }
+      return '#3b82f6'; // fallback
+    } catch (error) {
+      console.warn('Error converting HSL to hex:', error);
+      return '#3b82f6'; // fallback
     }
-    return '#3b82f6'; // fallback
   };
 
   // Convert hex to HSL
@@ -91,6 +113,11 @@ interface SettingsProps {
 const Settings: React.FC<SettingsProps> = ({ isOpen, onClose }) => {
   const { colors, updateColors, resetTheme } = useTheme();
   const { toast } = useToast();
+
+  // Add loading state check
+  if (!colors) {
+    return null;
+  }
 
   const handleReset = () => {
     resetTheme();
